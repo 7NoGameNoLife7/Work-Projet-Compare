@@ -1,35 +1,27 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import "./App.css";
+import ComparisonArea from "./components/ComparisonArea";
+import RecipeList from "./components/RecipeList";
+import recipes from "./data/recipes.json";
+import { useState } from "react";
+import type { Recipe } from "./components/RecipeCard";
 
 function App() {
-  const [count, setCount] = useState(0)
+	const [selectedRecipes1, setSelectedRecipes1] = useState<Recipe>(recipes[4]);
+	const [selectedRecipes2, setSelectedRecipes2] = useState<Recipe>(recipes[9]);
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+	return (
+		<>
+			<ComparisonArea
+				selectedRecipes1={selectedRecipes1}
+				selectedRecipes2={selectedRecipes2}
+			/>
+			<RecipeList
+				recipes={recipes}
+				setSelectedRecipes1={setSelectedRecipes1}
+				setSelectedRecipes2={setSelectedRecipes2}
+			/>
+		</>
+	);
 }
 
-export default App
+export default App;
