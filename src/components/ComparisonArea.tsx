@@ -1,16 +1,24 @@
-import RecipeCard from "./RecipeCard";
+import type { Recipe } from "./RecipeCard";
+import RecipeCardDetailed from "./RecipeCardDetailed";
 
-
-const ComparisonArea = ({selectedRecipes1, selectedRecipes2}) => {
-  return (
-     <>
-        <h2>Comparison Area</h2>
-        <div className="comparison-area">
-          <RecipeCard recipe= {selectedRecipes1}/>
-          <RecipeCard recipe= {selectedRecipes2}/>
-        </div>
-     </>
-    );
+interface ComparisonAreaProps {
+	selectedRecipes1: Recipe;
+	selectedRecipes2: Recipe;
 }
+
+const ComparisonArea = ({
+	selectedRecipes1,
+	selectedRecipes2,
+}: ComparisonAreaProps) => {
+	return (
+		<>
+			<h2>Comparison Area</h2>
+			<div className="comparison-area">
+				<RecipeCardDetailed recipe={selectedRecipes1} />
+				<RecipeCardDetailed recipe={selectedRecipes2} />
+			</div>
+		</>
+	);
+};
 
 export default ComparisonArea;
