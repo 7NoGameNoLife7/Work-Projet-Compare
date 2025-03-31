@@ -13,7 +13,7 @@ const RecipeList = ({
 }: RecipeListProps) => {
 	return (
 		<>
-			<h2>RecipeList</h2>
+			<h2>Recipes</h2>
 			<div className="recipe-list">
 				{recipes.map((recipe) => (
 					<RecipeCard
