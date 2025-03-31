@@ -12,7 +12,7 @@ const ComparisonArea = ({
 }: ComparisonAreaProps) => {
 	return (
 		<>
-			<h2>Comparison Area</h2>
+			<h2>Compare Recipes</h2>
 			<div className="comparison-area">
 				<RecipeCardDetailed recipe={selectedRecipes1} />
 				<RecipeCardDetailed recipe={selectedRecipes2} />
