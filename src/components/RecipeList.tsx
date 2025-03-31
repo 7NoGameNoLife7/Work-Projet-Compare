@@ -1,19 +1,23 @@
 import RecipeCard from "./RecipeCard"; 
 import { Recipe } from "./RecipeCard";
-
-  interface RecipeListProps  {
+interface RecipeListProps  {
     recipes: Recipe[];
-  };
-const RecipeList = ({recipes} : RecipeListProps) => {
+    setSelectedRecipes1: (recipe: Recipe) => void;
+    setSelectedRecipes2: (recipe: Recipe) => void;
+};
+
+  
+const RecipeList = ({recipes, setSelectedRecipes1, setSelectedRecipes2} : RecipeListProps ) => {
     console.log(recipes[0]);
   return (
     <>  
         <h2>RecipeList</h2>
         <div className="recipe-list">
             {recipes.map((recipe) => (
-                <RecipeCard key={recipe.name} recipe={recipe} />
+                <RecipeCard key={recipe.name} recipe={recipe} setSelectedRecipes1 = {setSelectedRecipes1} setSelectedRecipes2 = {setSelectedRecipes2}/>
             ))}
         </div>
+        
     </>   
 );
 }

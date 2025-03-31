@@ -8,9 +8,11 @@ interface Recipe {
 }
 interface RecipeCardProps {
 	recipe: Recipe;
+	setSelectedRecipes1: (recipe: Recipe) => void; 
+	setSelectedRecipes2	: (recipe: Recipe) => void;
 }
 
-const RecipeCard = ({ recipe }: RecipeCardProps) => {
+const RecipeCard = ({ recipe, setSelectedRecipes1, setSelectedRecipes2 }: RecipeCardProps) => {
 	const { name, url, description, author, ingredients, method } = recipe;
 
 	return (
@@ -27,8 +29,8 @@ const RecipeCard = ({ recipe }: RecipeCardProps) => {
 					<p>{method}</p>
 				</div>
 				<div className="recipe-btns">
-					<button type="button">Details</button>
-					<button type="button">Compare</button>
+					<button type="button" onClick={() => {setSelectedRecipes1(recipe)}}>Compare1</button>
+					<button type="button" onClick={() => {setSelectedRecipes2(recipe)}}>Compare2</button>
 				</div>
 			</div>
 		</div>

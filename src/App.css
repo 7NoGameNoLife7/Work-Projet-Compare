@@ -73,6 +73,7 @@
 
 .recipe-info {
 	display: flex;
+	flex-grow: 1;
 	flex-direction: column;
 	text-align: left;
 	justify-content: space-between;
@@ -90,7 +91,7 @@
 
 .recipe-info p {
 	max-height: 100px;
-	overflow: scroll;
+	overflow: auto ;
 }
 
 .recipe-btns {
@@ -101,4 +102,8 @@
 /* TEMPORAIRE */
 .recipe-details {
 	display: none;
+}
+.comparison-area {
+	display: flex;
+	gap: 1rem;
 }
