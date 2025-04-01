@@ -36,7 +36,7 @@ const RecipeCard = ({
 							setSelectedRecipes1(recipe);
 						}}
 					>
-						Compare1
+						Compare 1
 					</button>
 					<button
 						type="button"
@@ -44,7 +44,7 @@ const RecipeCard = ({
 							setSelectedRecipes2(recipe);
 						}}
 					>
-						Compare2
+						Compare 2
 					</button>
 				</div>
 			</div>
