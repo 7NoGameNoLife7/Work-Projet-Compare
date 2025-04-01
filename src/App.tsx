@@ -4,6 +4,7 @@ import RecipeList from "./components/RecipeList";
 import recipes from "./data/recipes.json";
 import { useState } from "react";
 import type { Recipe } from "./components/RecipeCard";
+import AddRecipeFrom from "./components/AddRecipeFrom";
 
 function App() {
 	const [selectedRecipes1, setSelectedRecipes1] = useState<Recipe>(recipes[4]);
@@ -15,11 +16,14 @@ function App() {
 				selectedRecipes1={selectedRecipes1}
 				selectedRecipes2={selectedRecipes2}
 			/>
+			<AddRecipeFrom/>
 			<RecipeList
 				recipes={recipes}
 				setSelectedRecipes1={setSelectedRecipes1}
 				setSelectedRecipes2={setSelectedRecipes2}
 			/>
+			
+
 		</>
 	);
 }
