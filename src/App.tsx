@@ -6,20 +6,15 @@ import { useState } from "react";
 import type { Recipe } from "./components/RecipeCard";
 
 function App() {
-	const [selectedRecipes1, setSelectedRecipes1] = useState<Recipe>(recipes[4]);
-	const [selectedRecipes2, setSelectedRecipes2] = useState<Recipe>(recipes[9]);
+	const [selectedRecipes, setSelectedRecipes] = useState<Recipe[]>([
+		recipes[Math.floor(Math.random() * recipes.length)],
+		recipes[Math.floor(Math.random() * recipes.length)],
+	]);
 
 	return (
 		<>
-			<ComparisonArea
-				selectedRecipes1={selectedRecipes1}
-				selectedRecipes2={selectedRecipes2}
-			/>
-			<RecipeList
-				recipes={recipes}
-				setSelectedRecipes1={setSelectedRecipes1}
-				setSelectedRecipes2={setSelectedRecipes2}
-			/>
+			<ComparisonArea selectedRecipes={selectedRecipes} />
+			<RecipeList recipes={recipes} setSelectedRecipes={setSelectedRecipes} />
 		</>
 	);
 }

@@ -10,7 +10,7 @@ const RecipeCardDetailed = ({ recipe }: RecipeCardDetailedProps) => {
 	return (
 		<div className="recipe-card-detailed">
 			<div className="recipe-global">
-				<img src="https://picsum.photos/200/300" alt={name} />
+				<img src={`https://picsum.photos/200/300?random=${name}`} alt={name} />
 				<div className="recipe-info">
 					<a href={url} target="_blank" rel="noreferrer">
 						<h3>{name}</h3>

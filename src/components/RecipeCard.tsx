@@ -9,16 +9,18 @@ interface Recipe {
 
 interface RecipeCardProps {
 	recipe: Recipe;
-	setSelectedRecipes1: (recipe: Recipe) => void;
-	setSelectedRecipes2: (recipe: Recipe) => void;
+	setSelectedRecipes: (recipes: Recipe[]) => void;
 }
 
-const RecipeCard = ({
-	recipe,
-	setSelectedRecipes1,
-	setSelectedRecipes2,
-}: RecipeCardProps) => {
+const RecipeCard = ({ recipe, setSelectedRecipes }: RecipeCardProps) => {
 	const { name, url, description, author } = recipe;
+
+	const handleOnClick = (recipe: Recipe) => {
+		setSelectedRecipes((prev /* : Recipe[] */) => {
+			const updatedComparisonRecipes = [...prev.slice(1), recipe];
+			return updatedComparisonRecipes;
+		});
+	};
 
 	return (
 		<div className="recipe-global">
@@ -33,18 +35,10 @@ const RecipeCard = ({
 					<button
 						type="button"
 						onClick={() => {
-							setSelectedRecipes1(recipe);
+							handleOnClick(recipe);
 						}}
 					>
-						Compare1
-					</button>
-					<button
-						type="button"
-						onClick={() => {
-							setSelectedRecipes2(recipe);
-						}}
-					>
-						Compare2
+						Compare
 					</button>
 				</div>
 			</div>
