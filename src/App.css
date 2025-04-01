@@ -112,7 +112,7 @@ h2 {
 
 .recipe-btns {
 	display: flex;
-	justify-content: space-around;
+	justify-content: flex-end;
 }
 
 .comparison-area {

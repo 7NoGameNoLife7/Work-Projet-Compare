@@ -5,15 +5,10 @@ import SearchBar from "./SearchBar";
 
 interface RecipeListProps {
 	recipes: Recipe[];
-	setSelectedRecipes1: (recipe: Recipe) => void;
-	setSelectedRecipes2: (recipe: Recipe) => void;
+	setSelectedRecipes: (recipes: Recipe[]) => void;
 }
 
-const RecipeList = ({
-	recipes,
-	setSelectedRecipes1,
-	setSelectedRecipes2,
-}: RecipeListProps) => {
+const RecipeList = ({ recipes, setSelectedRecipes }: RecipeListProps) => {
 	const [searchedName, setSearchedName] = useState("");
 
 	return (
@@ -34,8 +29,7 @@ const RecipeList = ({
 						<RecipeCard
 							key={index}
 							recipe={recipe}
-							setSelectedRecipes1={setSelectedRecipes1}
-							setSelectedRecipes2={setSelectedRecipes2}
+							setSelectedRecipes={setSelectedRecipes}
 						/>
 					))}
 			</div>
